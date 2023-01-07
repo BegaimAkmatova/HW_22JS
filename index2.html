@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+        .logo {
+            width: 100px;
+            height: 100px;
+        }
+        .block4 {
+            display: flex;
+            justify-content: space-between;
+            width: 800px;
+            margin: 0 auto;
+        }
+        
+        .block1 {
+            display: flex;
+            text-align: center;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid red;
+            margin: 10 5 10 5px;
+            width: 300px;
+
+            
+        }
+        .block2 {
+            display: flex;
+            text-align: center;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid red;
+            margin: 10 5 10 5px;
+            width: 300px;
+        }
+        .logo1 {
+            width: 100px;
+            height: 100px 
+        }
+        .block5 {
+            display: flex;
+            justify-content: space-between;
+            width: 800px;
+            margin: 0 auto;
+        }
+
+        .logo2 {
+            width: 100px;
+            height: 100px 
+        }
+
+        .block3 {
+            display: flex;
+            text-align: center;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid red;
+            margin: 10 5 10 5px;
+            width: 300px; 
+        }
+
+       
+        .block6 {
+            display: flex;
+            justify-content: space-between;
+            width: 800px;
+            margin: 0 auto;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let block4 = document.createElement('div')
+        block4.className = 'block4'
+        document.body.append(block4)
+
+        let block5 = document.createElement('div')
+        block5.className = 'block5'
+        document.body.append(block5)
+
+        let block6 = document.createElement('div')
+        block6.className = 'block6'
+        document.body.append(block6)
+
+        const users = [
+            {
+                time:'7:25 AM',
+                logo:'https://thumbs.dreamstime.com/z/%D0%B8%D0%BB%D0%BB%D1%8E%D1%81%D1%82%D1%80%D0%B0%D1%86%D0%B8%D1%8F-%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%B0-%D0%B7%D0%BD%D0%B0%D1%87%D0%BA%D0%B0-%D0%B0%D1%8D%D1%80%D0%BE%D0%BF%D0%BB%D0%B0%D0%BD%D0%B0-%D1%81%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB-%D0%BF%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BF%D0%BE%D0%BB%D0%B5%D1%82%D0%B0-116341509.jpg',
+                world:'Boston'
+            },
+            {
+                time:'8:15 PM',
+                logo:'https://icon2.cleanpng.com/20180525/rzb/kisspng-airplane-flight-0506147919-logo-kia-dynamic-flying-5b080efe31bdb0.1634112715272547822038.jpg',
+                world:'Madrid'
+            },
+            {
+                time:'Translate',
+                logo:'https://w7.pngwing.com/pngs/86/279/png-transparent-app-store-google-translate-translation-iphone-iphone-blue-electronics-logo.png',
+                world:'Spanish'
+            },
+            {
+                viev:'Bike',
+                logo:'https://e7.pngegg.com/pngimages/783/363/png-clipart-bicycle-graphics-mountain-bike-cycling-city-cyclist-logo-bicycle.png',
+                road:'13.1 Miles'
+            },
+            {
+                viev:'Boat',
+                logo:'https://w7.pngwing.com/pngs/976/541/png-transparent-cruise-ship-cruise1st-cruise-line-royal-caribbean-cruises-travel-ship-logo-transport-ship.png',
+                road:'90 Minutes'
+            },
+            {
+                viev:'Drive',
+                logo:'https://png.pngtree.com/png-clipart/20190520/original/pngtree-car-logo-design-template-vector-png-image_3605888.jpg',
+                road:'48 Miles'
+            },
+            {
+                time:'Morning',
+                logo:'https://w7.pngwing.com/pngs/1015/632/png-transparent-coffee-cup-espresso-coffee-cup-logo-teacup-coffee.png',
+                where:'Coffee'
+            },
+            {
+                time:'Afternoon',
+                logo:'https://w7.pngwing.com/pngs/714/230/png-transparent-dumbbell-physical-fitness-weight-training-barbell-computer-icons-dumbbell-physical-fitness-text-hand.png',
+                where:'Gym'
+            },
+            {
+                time:'Night',
+                logo:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2l-3B7zZDkKoPAF0GCSsvvA0WUjINyDuRuEisegziEZG-MuIj7DQjLE1TVx6lFuzGIKs&usqp=CAU',
+                where:'Hot Tub'
+            }
+        ]
+
+        
+
+        const render = () => {
+            for(let i = 0; i < 3; i++) {
+                console.log(users[i])
+                let userBlock = document.createElement('div')
+                userBlock.className = 'block1'
+
+                let time = document.createElement('h3')
+                time.innerHTML = users[i].time
+
+                let logo = document.createElement('img')
+                logo.className = "logo"
+                logo.src = users[i].logo
+
+                let world = document.createElement('span')
+                world.className = 'h3'
+                world.innerHTML = users[i].world
+                
+                block4.append(userBlock)
+                userBlock.append(time)
+                userBlock.append(logo)
+                userBlock.append(world)
+            }
+
+            for(let i = 3; i < 6; i++) {
+                console.log(users[i])
+                let userBlock1 = document.createElement('div')
+                userBlock1.className = 'block2'
+
+                let viev = document.createElement('p')
+                viev.innerHTML = users[i].viev
+
+                let logo1 = document.createElement('img')
+                logo1.className = 'logo1'
+                logo1.src = users[i].logo
+
+                let road = document.createElement('h3')
+                road.className = 'h3'
+                road.innerHTML = users[i].road
+
+                userBlock1.append(viev)
+                userBlock1.append(logo1)
+                userBlock1.append(road)
+                block5.append(userBlock1)
+            }
+
+            for(let i = 6; i < 9; i++) {
+                console.log(users[i])
+
+                let userBlock2 = document.createElement('div')
+                userBlock2.className = 'block3'
+
+                let time2 = document.createElement('p')
+                time2.innerHTML = users[i].time
+
+                let logo2 = document.createElement('img')
+                logo2.className = 'logo2'
+                logo2.src = users[i].logo
+
+                let where = document.createElement('h3')
+                where.className = 'h3'
+                where.innerHTML = users[i].where
+
+                userBlock2.append(time2)
+                userBlock2.append(logo2)
+                userBlock2.append(where)
+                block6.append(userBlock2)
+            }
+        }
+        render()
+    </script>
+</body>
+</html>
